@@ -13,7 +13,7 @@ import com.example.helloworld.Model.Note;
 public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
     private static final Object LOCK = new Object();
-    private static final String DATABASE_NAME = "personlist";
+    private static final String DATABASE_NAME = "notelist";
     private static AppDatabase sInstance;
 
     public static AppDatabase getInstance(Context context) {
