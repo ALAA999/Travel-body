@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="permissions_denied">permissions denied</string>
+    <string name="enable_location_services">enable location services</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="change_to_high_accuracy">change to high accuracy</string>
+</resources>
