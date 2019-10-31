@@ -31,6 +31,10 @@ public class AddNoteActivity extends AppCompatActivity {
     private EditText etTitle, etTime, etDescription;
     private AppDatabase mDb;
 
+
+
+
+
     @Override
     protected void onResume() {
         super.onResume();
