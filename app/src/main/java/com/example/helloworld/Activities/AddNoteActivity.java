@@ -30,7 +30,7 @@ public class AddNoteActivity extends AppCompatActivity {
     private Button btLocation, btSave;
     private EditText etTitle, etTime, etDescription;
     private AppDatabase mDb;
-    //hhhhhhhh
+    //hhhhhhhh2222
 
     @Override
     protected void onResume() {
