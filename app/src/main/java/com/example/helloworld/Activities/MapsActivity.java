@@ -32,9 +32,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import static com.example.helloworld.Activities.AddNoteActivity.latitude;
-import static com.example.helloworld.Activities.AddNoteActivity.longitude;
-
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -216,8 +213,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .newCameraPosition(cameraPosition));
         markerOptions = new MarkerOptions().position(latLng).title("My location");
         mMap.addMarker(markerOptions);
-        latitude = latLng.latitude;
-        longitude = latLng.longitude;
+        AddNoteActivity.latLng = new LatLng(latLng.latitude, latLng.longitude);
     }
 
     @Override

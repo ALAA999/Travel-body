@@ -21,25 +21,23 @@ import com.example.helloworld.DataBase.AppDatabase;
 import com.example.helloworld.DataBase.AppExecutors;
 import com.example.helloworld.Model.Note;
 import com.example.helloworld.R;
+import com.google.android.gms.maps.model.LatLng;
 
 public class AddNoteActivity extends AppCompatActivity {
 
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    private static final int MY_CAMERA_PERMISSION_CODE = 101;
     private static final int CAMERA_REQUEST = 1888;
-    public static double latitude = 0, longitude = 0;
+    public static LatLng latLng = new LatLng(0, 0);
     private Button btLocation, btSave;
     private EditText etTitle, etTime, etDescription;
     private AppDatabase mDb;
 
 
-
-
-
     @Override
     protected void onResume() {
         super.onResume();
-        if (latitude != 0 && longitude != 0) {
-            btLocation.setText("" + latitude + ", " + longitude);
+        if (latLng.latitude != 0 && latLng.longitude != 0) {
+            btLocation.setText("" + latLng.latitude + ", " + latLng.longitude);
         }
     }
 
@@ -84,10 +82,9 @@ public class AddNoteActivity extends AppCompatActivity {
                     AppExecutors.getInstance().diskIO().execute(new Runnable() {
                         @Override
                         public void run() {
-                            Note note = new Note(title, latitude, longitude, time, description);
+                            Note note = new Note(title, latLng.latitude, latLng.longitude, time, description);
                             mDb.noteDao().insertNote(note);
-                            latitude = 0;
-                            longitude = 0;
+                            latLng = new LatLng(0, 0);
                             finish();
                         }
                     });
